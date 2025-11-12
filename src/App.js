@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { fetchBaconIpsum } from './services/baconService';
 
 function App() {
+  useEffect(() => {
+    async function testFetch() {
+      const data = await fetchBaconIpsum(2, true);
+      console.log('text:', data);
+    }
+    testFetch();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <h1>Word Frequency Counter</h1>
+
     </div>
   );
 }
