@@ -9,7 +9,20 @@ export function TopWordsTable(props) {
       <React.Fragment>
         <div>
           <h3>Top 5 Words</h3>
-          <p>No data available</p>
+          <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Word</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tr>
+            <td colSpan="3" style={{ textAlign: 'center' }}>No data available</td>
+          </tr>
+          <tbody>
+        </tbody>
+        </table>
         </div>
       </React.Fragment>
     );

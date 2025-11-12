@@ -1,0 +1,186 @@
+/* WordFrequencyChart.css */
+.word-frequency-container {
+  width: 100%;                 
+  max-width: 1200px; 
+  margin-top: 10px;        
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;                
+
+}
+
+.word-frequency-container h2 {
+  color: #2c3e50;
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #fafbfc;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+/* no data state */
+.no-data-container {
+  display: flex;
+  height: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  color: #6c757d;
+  text-align: center;
+  padding: 20px;
+}
+
+.no-data-container p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.no-data-icon {
+  font-size: 20px;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+/* Recharts */
+.recharts-cartesian-axis-tick-value {
+  font-size: 12px;
+  fill: #495057;
+  font-weight: 500;
+}
+
+.recharts-xAxis .recharts-cartesian-axis-ticks {
+  font-size: 11px;
+}
+
+.recharts-yAxis .recharts-cartesian-axis-ticks {
+  font-size: 12px;
+}
+
+.recharts-tooltip-wrapper {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recharts-default-tooltip {
+  background: #ffffff !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.recharts-tooltip-item {
+  color: #495057 !important;
+  font-weight: 500 !important;
+}
+
+.recharts-tooltip-item-name {
+  color: #6c757d !important;
+}
+
+.recharts-bar-rectangle {
+  transition: all 0.3s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .word-frequency-container {
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  .word-frequency-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .chart-wrapper {
+    height: 280px;
+  }
+
+  .no-data-container {
+    height: 280px;
+    padding: 15px;
+  }
+
+  .no-data-container p {
+    font-size: 14px;
+  }
+
+  .no-data-icon {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .word-frequency-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .word-frequency-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+
+  .no-data-container {
+    height: 250px;
+    padding: 12px;
+  }
+
+  .no-data-container p {
+    font-size: 13px;
+  }
+
+  .no-data-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .recharts-cartesian-axis-tick-value {
+    font-size: 10px;
+  }
+}
+
+/* loading*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.word-frequency-container {
+  animation: fadeIn 0.5s ease-out;
+}

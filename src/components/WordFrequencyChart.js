@@ -1,38 +1,30 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { getTopWords } from "../services/textAnalysisService";
+import '../styles/WordFrequencyChart.css';
 
 export function WordFrequencyChart(props) {
   const { freqDict } = props;
 
   if (!freqDict || Object.keys(freqDict).length === 0) {
     return (
-      <React.Fragment>
-        <div>
-          <h3>Repeated Words - Bar Chart</h3>
-          <div
-            style={{
-              border: "1px solid black",
-              height: "300px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <p>No data available</p>
-          </div>
+      <div className="word-frequency-container">
+        <h2>Repeated Words - Bar Chart</h2>
+        <div className="no-data-container">
+          <div className="no-data-icon">📊</div>
+          <p>No data available</p>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 
   const freqArray = getTopWords(freqDict, 10);
 
   return (
-    <React.Fragment>
-      <div>
-        <h3>Repeated Words - Bar Chart</h3>
-        <ResponsiveContainer width="100%" height={300}>
+    <div className="word-frequency-container">
+      <h2>Repeated Words - Bar Chart</h2>
+      <div className="chart-wrapper">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart data={freqArray}>
             <XAxis dataKey="word" />
             <YAxis />
@@ -41,6 +33,6 @@ export function WordFrequencyChart(props) {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
