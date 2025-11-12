@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import ApiDataSource_impl from './components/ApiDataSource';
 import { fetchBaconIpsum } from './services/baconService';
 import { analyzeText } from './services/textAnalysisService';
+import { getWordFrequencies } from './services/textAnalysisService';
 
 function App() {
   const [data, setData] = useState([]);
   const [stats, setStats] = useState({ words: 0, characters: 0, paragraphs: 0 });
+  const [freqDict, setFreqDict] = useState({});
 
   const handleGenerate = async (paragraphs, startWithLorem) => {
     const result = await fetchBaconIpsum(paragraphs, startWithLorem);
@@ -14,7 +16,13 @@ function App() {
 
     const statsResult = analyzeText(result);
     setStats(statsResult);
+
+    const freq = getWordFrequencies(result);
+    setFreqDict(freq);
+  
   };
+
+
 
   const handleClear = () => {
     setData([]);

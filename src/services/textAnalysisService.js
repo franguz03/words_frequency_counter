@@ -14,3 +14,22 @@ export function analyzeText(paragraphsArray) {
     paragraphs
   };
 }
+
+export function getWordFrequencies(paragraphs) {
+  if (!paragraphs || paragraphs.length === 0) return {};
+
+  const text = Array.isArray(paragraphs) ? paragraphs.join(' ') : paragraphs;
+
+  const words = text
+    .toLowerCase()
+    .replace(/[.,!?;:()"]/g, '')
+    .split(/\s+/)
+    .filter((w) => w.length > 0);
+
+  const counts = {};
+  for (const word of words) {
+    counts[word] = (counts[word] || 0) + 1;
+  }
+
+  return counts; // 👈 Diccionario
+}
