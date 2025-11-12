@@ -5,6 +5,7 @@ import { fetchBaconIpsum } from './services/baconService';
 import { analyzeText } from './services/textAnalysisService';
 import { getWordFrequencies } from './services/textAnalysisService';
 import { WordFrequencyChart } from './components/WordFrequencyChart';
+import { TopWordsTable } from './components/TopWordsTable';
 
 
 
