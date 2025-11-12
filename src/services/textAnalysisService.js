@@ -31,5 +31,5 @@ export function getWordFrequencies(paragraphs) {
     counts[word] = (counts[word] || 0) + 1;
   }
 
-  return counts; // 👈 Diccionario
+  return counts; 
 }

@@ -4,6 +4,9 @@ import ApiDataSource_impl from './components/ApiDataSource';
 import { fetchBaconIpsum } from './services/baconService';
 import { analyzeText } from './services/textAnalysisService';
 import { getWordFrequencies } from './services/textAnalysisService';
+import { WordFrequencyChart } from './components/WordFrequencyChart';
+import { TopWordsTable } from './components/TopWordsTable';
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -27,6 +30,7 @@ function App() {
   const handleClear = () => {
     setData([]);
     setStats({ words: 0, characters: 0, paragraphs: 0 });
+    setFreqDict({});
   };
 
   return (
@@ -38,6 +42,9 @@ function App() {
         onGenerate={handleGenerate}
         onClear={handleClear}
       />
+      <WordFrequencyChart freqDict={freqDict} />
+      <TopWordsTable freqDict={freqDict} />
+
     </div>
   );
 }
