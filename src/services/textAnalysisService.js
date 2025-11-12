@@ -33,3 +33,17 @@ export function getWordFrequencies(paragraphs) {
 
   return counts; 
 }
+export function getTopWords(freqDict, topN) {
+  if (!freqDict || Object.keys(freqDict).length === 0) {
+    return [];
+  }
+
+  const entries = Object.entries(freqDict).map(([word, count]) => ({
+    word,
+    count,
+  }));
+
+  const sorted = entries.sort((a, b) => b.count - a.count);
+
+  return sorted.slice(0, topN);
+}

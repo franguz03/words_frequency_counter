@@ -43,7 +43,7 @@ function App() {
         onClear={handleClear}
       />
       <WordFrequencyChart freqDict={freqDict} />
-      <TopWordsTable freqDict={freqDict} />
+      
 
     </div>
   );
