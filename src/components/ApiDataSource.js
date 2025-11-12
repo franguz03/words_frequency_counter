@@ -58,7 +58,7 @@ function ApiDataSource_impl({ data, stats, onGenerate, onClear }) {
         {data.length > 0 ? (
           data.map((p, i) => <p key={i}>{p}</p>)
         ) : (
-          <p>No data yet. Generate some text!</p>
+          <p>Generate some text</p>
         )}
       </div>
 

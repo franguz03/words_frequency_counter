@@ -1,0 +1,153 @@
+/* TopWordsTable.css */
+.top-words-container {
+  width: 100%;                 
+  max-width: 1200px; 
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;  
+  margin-top: 10px ;              
+}
+
+.top-words-container h2 {
+  color: #2c3e50;
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.top-words-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.top-words-table th {
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.top-words-table tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.top-words-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateX(4px);
+}
+
+.top-words-table td {
+  padding: 14px 12px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.top-words-table td:first-child {
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.top-words-table td:nth-child(2) {
+  font-weight: 500;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.top-words-table td:nth-child(3) {
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* no data state */
+.no-data-row {
+  background: #f8f9fa;
+}
+
+.no-data-row td {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-words-container {
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  .top-words-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .top-words-table th,
+  .top-words-table td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .top-words-table th {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-words-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .top-words-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .top-words-table {
+    font-size: 12px;
+  }
+
+  .top-words-table th,
+  .top-words-table td {
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  .top-words-table th {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-words-container {
+  animation: fadeIn 0.5s ease-out;
+}

@@ -36,7 +36,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Word Frequency Counter</h1>
+      <h1>Test / Front</h1>
+      <h3>Text, graph and table generator</h3>
       <ApiDataSource_impl
         data={data}
         stats={stats}
