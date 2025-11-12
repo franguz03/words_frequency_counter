@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/ApiDataSource.css';
 
 function ApiDataSource_impl({ data, stats, onGenerate, onClear }) {
   const [paragraphs, setParagraphs] = useState(1);
@@ -15,7 +16,7 @@ function ApiDataSource_impl({ data, stats, onGenerate, onClear }) {
       {/* Controles */}
       <div className="controls">
         <label>
-          # Paragraphs:
+          #Paragraphs:
           <input
             type="number"
             min="1"
