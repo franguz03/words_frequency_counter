@@ -3,6 +3,9 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recha
 import { getTopWords } from "../services/textAnalysisService";
 import '../styles/WordFrequencyChart.css';
 
+// Shows a bar chart with the 10 most frequent words.
+// Props:
+// - freqDict: object with words and their counts
 export function WordFrequencyChart(props) {
   const { freqDict } = props;
 

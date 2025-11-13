@@ -1,3 +1,5 @@
+// Counts words, characters, and paragraphs.
+// Returns an object: { words, characters, paragraphs }
 export function analyzeText(paragraphsArray) {
   if (!Array.isArray(paragraphsArray) || paragraphsArray.length === 0) {
     return { words: 0, characters: 0, paragraphs: 0 };
@@ -8,13 +10,11 @@ export function analyzeText(paragraphsArray) {
   const characters = fullText.length;
   const paragraphs = paragraphsArray.length;
 
-  return {
-    words,
-    characters,
-    paragraphs
-  };
+  return { words, characters, paragraphs };
 }
 
+// Counts how many times each word appears.
+// Returns an object: { word: count }
 export function getWordFrequencies(paragraphs) {
   if (!paragraphs || paragraphs.length === 0) return {};
 
@@ -31,18 +31,17 @@ export function getWordFrequencies(paragraphs) {
     counts[word] = (counts[word] || 0) + 1;
   }
 
-  return counts; 
+  return counts;
 }
+
+// Gets the top N most common words.
+// Returns an array: [{ word, count }]
 export function getTopWords(freqDict, topN) {
   if (!freqDict || Object.keys(freqDict).length === 0) {
     return [];
   }
 
-  const entries = Object.entries(freqDict).map(([word, count]) => ({
-    word,
-    count,
-  }));
-
+  const entries = Object.entries(freqDict).map(([word, count]) => ({ word, count }));
   const sorted = entries.sort((a, b) => b.count - a.count);
 
   return sorted.slice(0, topN);

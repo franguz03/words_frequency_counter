@@ -2,8 +2,11 @@ import React from "react";
 import { getTopWords } from "../services/textAnalysisService";
 import '../styles/TopWordsTable.css';
 
+// Shows a table with the 5 most frequent words.
+// Props:
+// - freqDict: object with words and their counts
 export function TopWordsTable(props) {
-  const {freqDict} = props;
+  const { freqDict } = props;
 
   if (!freqDict || Object.keys(freqDict).length === 0) {
     return (
